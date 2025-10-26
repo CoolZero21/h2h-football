@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Head 2 Head</title>
+</head>
+<body>
+    <header>
+        <img src="img/ball.svg" alt="">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">API</a></li>
+            <li><a href="">Home</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="search">
+            <form action="" class="searchForm">
+                <label for="team1">Choose first team</label>
+                <input type="text" name="team1" id="team1">
+                <button id="searchButton">Find</button>
+                <label for="team2">Choose second team</label>
+                <input type="text" name="team2" id="team2">
+            </form>
+        </div>
+        <div class="teams">
+            <div class="teamCont team1">
+                <div class="teamImg">
+                    <img src="img/quest.svg" alt="">
+                </div>
+                <p>Team Name</p>
+            </div>
+            <div class="vsCont">
+                <h2>V<span id="vs">S</span></h2>
+            </div>
+            <div class="teamCont team2">
+                <div class="teamImg">
+                    <img src="img/quest.svg" alt="">
+                </div>
+                <p>Team Name</p>
+            </div>
+        </div>
+        <div class="results-wrapper displayNone">
+            <div class="results">
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
