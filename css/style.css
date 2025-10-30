@@ -1,4 +1,6 @@
-
+:root{
+    --base: rgba(175, 205, 134, 0.95);
+}
 html{
     font-size: .625rem;
 }
@@ -27,12 +29,45 @@ header img{
     width: 50px;
 }
 header a{
-    padding: 13px 30px;
+    padding: 11px 30px;
+    border: 2px solid transparent;
     background-color: hsl(200, 60%, 60%, 50%);
     color: whitesmoke;
 }
 header a:hover{
     background-color: hsl(220, 60%, 60%, 50%);
+}
+#api{
+    border: 2px solid red;
+    position: relative;
+    opacity: 1;
+    transition: 0.3s;
+}
+#api::before{
+    content: url(/img/arrow.svg);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: -50%;
+    top: 120%;
+    animation-name: arrow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes arrow {
+    0%{
+        left: -40%;
+        top: 110%; 
+    }
+    50%{
+        left:-60%;
+        top: 140%;
+    }
+    100%{
+        left: -40%;
+        top: 110%;        
+    }
 }
 main{
     display: flex;
@@ -50,10 +85,12 @@ input{
     border: none;
     border-radius: 10px;
     font-size: 2rem;
+    text-align: center;
+    box-shadow: 0 0 2px 0 #505050;
 }
 .search{
     width: 80%;
-    background-color: rgb(212, 230, 245, 0.98);
+    background-color: var(--base);
     padding: 30px;
     border-radius: 10px;
     margin-top: 50px;
@@ -79,15 +116,38 @@ label[for="team2"]{
     grid-column: 3 / 4;
 }
 #searchButton{
+    font-size: 2rem;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     padding: 10px 50px;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 0 2px 0 #505050;
+    anchor-name: --button;
+}
+.infobox{
+    position: fixed;
+    position-anchor: --button;
+    position-area: bottom;
+    width: 200px;
+    background-color: aliceblue;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-shadow: 0 0 2px 0 #000;
+    animation: opacity 0.3s;
+}
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .teams{
     width: 90%;
-    background-color: rgb(212, 230, 245, 0.98);
+    background-color: var(--base);
     border-radius: 20px;
     padding: 50px 20px;
     display: grid;
@@ -112,7 +172,7 @@ label[for="team2"]{
 }
 .results-wrapper{
     width: 90%;
-    background-color: rgb(212, 230, 245, 0.98);
+    background-color: var(--base);
     border-radius: 20px;
     padding: 20px;
     display: flex;
@@ -151,4 +211,7 @@ label[for="team2"]{
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.box-shadow{
+    box-shadow: 0 0 10px 0 #000;
 }

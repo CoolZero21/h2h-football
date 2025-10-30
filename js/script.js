@@ -1,13 +1,23 @@
 const findBtn = document.querySelector("#searchButton")
 findBtn.addEventListener("click", async (e)=>{
     e.preventDefault();
-    await getData();
+    if(myApi.length === 0) {
+        const apiBtn = document.querySelector(".apiBtn")
+        const searchDiv = document.querySelector(".search")
+        const window = document.createElement("div")
+        window.innerHTML = `<p>Firstly you need to paste your API key</p>`
+        window.classList.add("infobox")
+        searchDiv.appendChild(window)
+        apiBtn.setAttribute("id", "api")
+    } else {
+        await getData();
+    }
 })
 
 
 const team1Input = document.querySelector("#team1");
 const team2Input = document.querySelector("#team2");
-const myApi = "e31e58f4f602de6e4b9dd55e3b8bf111"
+let myApi = ""
 
 
 async function getData() {
