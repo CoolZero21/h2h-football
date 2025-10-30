@@ -7,7 +7,7 @@ findBtn.addEventListener("click", async (e)=>{
 
 const team1Input = document.querySelector("#team1");
 const team2Input = document.querySelector("#team2");
-const myApi = ""
+const myApi = "e31e58f4f602de6e4b9dd55e3b8bf111"
 
 
 async function getData() {

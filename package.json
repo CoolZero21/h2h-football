@@ -1,0 +1,26 @@
+{
+  "name": "h2h-football",
+  "version": "1.0.0",
+  "description": "Statistic head-to-head matches of football teams",
+  "main": "script.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoolZero21/h2h-football.git"
+  },
+  "author": "Bohdan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoolZero21/h2h-football/issues"
+  },
+  "homepage": "https://github.com/CoolZero21/h2h-football#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
