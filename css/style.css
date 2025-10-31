@@ -69,6 +69,50 @@ header a:hover{
         top: 110%;        
     }
 }
+.api-input{
+    position: fixed;
+    background-color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    right: 60px;
+    top: 60px;
+    border-radius: 20px;
+}
+#api-input{
+    font-size: 1.8rem;
+    width: 35rem;
+}
+.get-api{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.api-submit{
+    font-size: 2rem;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+p a{
+    background-color: transparent;
+    color: rgb(76, 76, 235);
+    padding: 0;
+}
+p a:hover {
+    color: rgb(120, 120, 235);;
+    background-color: transparent;
+}
+button:hover{
+    background-color: hsl(16, 100%, 59%);;
+}
+button{
+    background-color: hsl(16, 100%, 66%);
+    border: none;
+}
 main{
     display: flex;
     flex-direction: column;
@@ -124,8 +168,10 @@ label[for="team2"]{
     border-radius: 10px;
     box-shadow: 0 0 2px 0 #505050;
     anchor-name: --button;
+    background-color: #a0a0a0;
 }
 .infobox{
+    text-align: center;
     position: fixed;
     position-anchor: --button;
     position-area: bottom;
@@ -214,4 +260,12 @@ label[for="team2"]{
 }
 .box-shadow{
     box-shadow: 0 0 10px 0 #000;
+}
+.hidden{
+    display: none;
+}
+.no-matches{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
 }

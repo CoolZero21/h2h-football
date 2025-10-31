@@ -18,6 +18,7 @@ liveReloadServer.server.once("connection", () => {
 })
 
 const server = http.createServer(async (req,res) => {
+
     try{
         const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
         let pathName = parsedUrl.pathname;
@@ -34,7 +35,7 @@ const server = http.createServer(async (req,res) => {
         }[ext] || 'text/plain';
 
         let data ;
-
+        
         if (ext === ".html") {
             data = await fs.readFile(filePath, "utf-8");
             data = data.replace('</body>', `<script src="http://localhost:35729/livereload.js?snipver=1"></script></body>`);
@@ -44,13 +45,17 @@ const server = http.createServer(async (req,res) => {
 
         res.writeHead(200, {'content-type': contentType});
         res.end(data);
+
     } catch (err){
         res.writeHead(404, { 'content-type': 'text/plain' })
         res.end('404 not found')
     }
+
 
 })
 
 server.listen(PORT, () =>{
     console.log(`Server running on ${PORT} port`);
 })
+
+
