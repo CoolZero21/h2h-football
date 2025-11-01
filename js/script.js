@@ -16,11 +16,7 @@ windowInfo.classList.add("infobox");
 
 
 function requestApiKey(){
-    windowInfo.innerHTML = `<p>Firstly you need to paste your API key</p>`;
-    searchDiv.appendChild(windowInfo);
-    setTimeout(() => {
-        searchDiv.removeChild(windowInfo);
-    }, 5000);
+    showInfo("Firstly you need to paste your API key")
     apiBtn.setAttribute("id", "api");
 }
 
@@ -86,7 +82,7 @@ async function getData() {
                                             })
 
         if (!response.ok) {
-            throw new Error(`Somthing wrong with API`);
+            throw new Error(`Somthing went wrong with API`);
         }
 
         const result = await response.json();
@@ -95,14 +91,9 @@ async function getData() {
         updateResult(allMatches);
     }
     catch (error) {
-        windowInfo.innerHTML = `<p>${error.message}</p>`;
-        searchDiv.appendChild(windowInfo);
-        setTimeout(() => {
-            searchDiv.removeChild(windowInfo);
-        }, 5000);
-    }
+        showInfo(error.message);
 
-    
+    }
 
 }
 
@@ -122,7 +113,7 @@ async function getTeamInfo(input){
                                             });
 
         if(!response.ok){
-            throw new Error(`Somthing wrong with API`)
+            throw new Error(`Somthing went wrong with API`)
         }
 
         const result = await response.json();
@@ -141,11 +132,7 @@ async function getTeamInfo(input){
         }
     }
     catch (error){
-        windowInfo.innerHTML = `<p>${error.message}</p>`;
-        searchDiv.appendChild(windowInfo);
-        setTimeout(() => {
-            searchDiv.removeChild(windowInfo);
-        }, 5000);
+        showInfo(error.message);
     }
 
 }
@@ -172,7 +159,7 @@ function updateResult(result) {
     resultsWrapper.classList.remove("displayNone");
     
     if (result.length === 0) {
-        resultsCont.innerHTML = `<p class="no-matches">There was no mathes between teams</p>`
+        resultsCont.innerHTML = `<p class="no-matches">There were no mathes between teams</p>`
     } else {
         for (let match of result){
             const createDiv = document.createElement("div");
@@ -197,4 +184,12 @@ function updateResult(result) {
 }
 
 
-
+function showInfo(message) {
+    const infoBox = document.createElement("div");
+    infoBox.classList.add("infobox");
+    infoBox.innerHTML = `<p>${message}</p>`;
+    searchDiv.appendChild(infoBox);
+    setTimeout(() => {
+        infoBox.remove();
+    }, 5000);
+}
